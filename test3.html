@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <style>
+        .container{
+            height: 100vh;
+            background-color: red;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .container:nth-of-type(odd){
+            background-color: pink;
+        }
+
+        .element, .element2{
+            position: absolute;
+            top: 0;
+            font-size: 80px;
+            /* transition: .1s ease; */
+        }
+        body{
+            margin: 0;
+        }
+
+        #c2 .element2{
+            color: green;
+        }
+
+        #c1 .element{
+            color: blue;
+        }
+
+        .element2{
+            position: fixed;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container" id="c2">
+        <div class="element2">eee</div>
+    </div>
+
+    <div class="container" id="c1">
+        <div class="element">eee</div>
+    </div>
+
+    <div class="container">
+
+    </div>
+
+    <script>
+        // $('.element')
+        function scroll(e){
+            // console.log(e)
+            console.log($('.element')[0].getBoundingClientRect().top)
+            let val = $('#c1')[0].getBoundingClientRect().top
+            // let val = window.pageYOffset - $('#c1')[0].getBoundingClientRect().top
+            // $('.element')[0].css('top', `${0 - val} px`)
+            document.querySelector('.element').style.top = `${0 - val}px`
+
+            // let val2 = $('#c2')[0].getBoundingClientRect().top
+            // // $('.element')[0].css('top', `${0 - val} px`)
+            // document.querySelector('.element2').style.top = `${0 + window.scrollY}px`
+        }
+
+        window.onscroll = scroll
+    </script>
+</body>
+</html>
