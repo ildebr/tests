@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <style>
+        .p1,.p2{
+            background-image: url(btrackbikes/img/sysbike.jpg);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .container{
+            height: 100vh;
+        }
+
+        .p2{
+            filter: invert(1);
+        }
+
+        .stick{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            /* background-color: blue; */
+            z-index: 100;
+            display: flex;
+            align-items: center;
+
+        }
+        body,*{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .logoarea{
+            height: 80%;
+            width: 200px;
+            /* background-color: blue; */
+            overflow: hidden;
+            /* overflow-y: scroll; */
+        }
+
+        .linter{
+            height: 200vh;
+            
+        }
+
+        .l1,.l2{
+            background-image: url(sysbike.jpg);
+            /* background-image: url(2555logo.png); */
+            /* background-size: cover;
+            background-position: center;
+            background-attachment: fixed; */
+            width: 200px;
+            height: 200px;
+            position: sticky;
+            background-repeat: no-repeat;
+            top: 0;
+            background-size: contain;
+            background-attachment: fixed;
+            background-size: 200px 40px;
+        }
+
+        .l2{
+            filter: invert(1);
+        }
+
+        .lcon{
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="stick">
+        <div class="logoarea">
+            <div class="linter">
+                <div class="lcon">
+                    <div class="l1"></div>
+                </div>
+                <div class="lcon">
+                    <div class="l2"></div>
+                </div>
+                <div class="lcon">
+                    <div class="l1"></div>
+                </div>
+            </div>
+            <!-- <div class="linter">
+                <div class="l2"></div>
+            </div> -->
+        </div>
+    </div>
+    <div class="container p1">
+
+    </div>
+    <div class="container p2"></div>
+    <div class="container p1">
+
+    </div>
+
+
+    <script>
+        window.onscroll = (e)=>{
+            document.querySelector('.logoarea').scrollTop = window.scrollY + 5
+        }
+    </script>
+
+</body>
+</html>
